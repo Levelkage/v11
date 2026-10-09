@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="theme-color" content="#000000" />
+  <title>Olho Laser</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- O vídeo fica escondido: cada frame é desenhado no canvas, junto com os efeitos. -->
+  <video id="video" playsinline muted autoplay></video>
+  <canvas id="stage"></canvas>
+
+  <div id="hud" hidden>
+    <div class="row"><span>Olho esq.</span><div class="bar"><i id="barL"></i></div></div>
+    <div class="row"><span>Olho dir.</span><div class="bar"><i id="barR"></i></div></div>
+    <div class="row"><span id="hudState">—</span><span id="hudFps"></span></div>
+  </div>
+
+  <div id="controls" hidden>
+    <button id="btnSound" aria-label="Som">🔊</button>
+    <button id="btnDebug" aria-label="Diagnóstico">📊</button>
+    <button id="btnClear" aria-label="Limpar marcas">🧽</button>
+  </div>
+
+  <div id="intro">
+    <div class="card">
+      <h1>Olho Laser</h1>
+      <p>Feche <b>um olho só</b> e mantenha o outro aberto: um raio laser sai do olho aberto.</p>
+      <p class="hint">Vire a cabeça para mirar. O raio queima o vidro da tela onde você mira.</p>
+      <button id="btnStart">Ligar câmera</button>
+      <p id="status" class="status"></p>
+    </div>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

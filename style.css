@@ -1,0 +1,105 @@
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+html, body {
+  margin: 0;
+  height: 100%;
+  background: #000;
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow: hidden;
+  overscroll-behavior: none;
+  touch-action: manipulation;
+}
+
+#video {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+#stage {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100dvh;
+  display: block;
+}
+
+#intro {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  background: radial-gradient(circle at 50% 40%, #3a0000 0%, #000 70%);
+}
+
+.card {
+  max-width: 360px;
+  text-align: center;
+}
+
+.card h1 {
+  margin: 0 0 12px;
+  font-size: 34px;
+  letter-spacing: 1px;
+  color: #fff;
+  text-shadow: 0 0 12px #ff2a00, 0 0 32px #ff0000;
+}
+
+.card p { line-height: 1.45; color: #ddd; }
+.card .hint { font-size: 14px; color: #aaa; }
+
+#btnStart {
+  margin-top: 12px;
+  padding: 14px 28px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(#ff3b1f, #b30000);
+  border: 0;
+  border-radius: 999px;
+  box-shadow: 0 0 24px rgba(255, 30, 0, 0.6);
+}
+#btnStart:disabled { opacity: 0.5; }
+
+.status { min-height: 1.4em; font-size: 14px; color: #ff9b8a; }
+
+#controls {
+  position: fixed;
+  right: max(12px, env(safe-area-inset-right));
+  bottom: max(16px, env(safe-area-inset-bottom));
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#controls button {
+  width: 46px;
+  height: 46px;
+  font-size: 20px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+#hud {
+  position: fixed;
+  left: max(12px, env(safe-area-inset-left));
+  top: max(12px, env(safe-area-inset-top));
+  padding: 10px 12px;
+  width: 200px;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+#hud .row { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin: 3px 0; }
+#hud .bar { flex: 1; height: 8px; background: rgba(255, 255, 255, 0.15); border-radius: 4px; overflow: hidden; }
+#hud .bar i { display: block; height: 100%; width: 0; background: #4cd964; }
+
+[hidden] { display: none !important; }
