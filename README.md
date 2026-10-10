@@ -8,11 +8,15 @@ Roda direto no Safari, sem instalar nada (dá para "Adicionar à Tela de Início
 
 ## Como usar no iPhone
 
-A câmera só funciona em **HTTPS**. O jeito mais simples é o GitHub Pages:
+A câmera só funciona em **HTTPS** (abrir o `index.html` direto pelo app Arquivos não
+funciona). O jeito mais simples é o GitHub Pages, que é grátis para repositórios
+**públicos** (em repositório privado exige plano pago):
 
-1. No GitHub: **Settings › Pages › Build and deployment › Source: GitHub Actions**.
-2. Faça merge na `main` (ou rode o workflow *Publicar no GitHub Pages* manualmente).
-3. Abra `https://<usuario>.github.io/v11/` no Safari do iPhone e toque em **Ligar câmera**.
+1. **Settings › General › Danger Zone › Change visibility › Public**.
+2. **Settings › Pages › Build and deployment**: Source **Deploy from a branch**,
+   branch `claude/eye-detection-laser-effect-q7ts36` (ou `main`, depois do merge), pasta `/ (root)` › **Save**.
+3. Espere 1–2 minutos e abra `https://levelkage.github.io/v11/` no **Safari** do iPhone.
+4. Toque em **Ligar câmera** e permita o acesso.
 
 Para testar no computador: `npx http-server .` e abra `http://localhost:8080`
 (`localhost` é permitido sem HTTPS).
